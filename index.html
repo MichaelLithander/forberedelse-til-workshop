@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vær i Halden</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Vær i Halden</h1>
+    <p class="subtitle">Data fra Met Norway / Yr (LocationForecast 2.0)</p>
+
+    <section id="weather" class="card">
+      <div id="loading">Laster værdata…</div>
+      <div id="content" class="hidden">
+        <div class="row">
+          <div class="big"> <span id="temp">—</span>°C</div>
+          <div class="col">
+            <div id="symbol" class="symbol">–</div>
+            <div id="time" class="time">—</div>
+          </div>
+        </div>
+
+        <ul class="details">
+          <li>Vind: <span id="wind">—</span> m/s</li>
+          <li>Regn (1t): <span id="precip">—</span> mm</li>
+          <li>Lufttrykk: <span id="pressure">—</span> hPa</li>
+        </ul>
+        <div class="actions">
+          <button id="refresh">Oppdater</button>
+        </div>
+
+        <!-- Hourly forecast (next ~12 points) -->
+        <section id="hourly-forecast" class="hourly hidden">
+          <h2>Time for time (neste 12)</h2>
+          <div id="forecast-row" class="forecast-row"></div>
+        </section>
+      </div>
+
+      <div id="error" class="hidden error"></div>
+    </section>
+
+    <footer>
+      <small>Tips: Hvis data ikke lastes inn, se README for info om User-Agent/CORS.</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
